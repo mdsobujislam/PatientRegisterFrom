@@ -1,0 +1,59 @@
+﻿@model IEnumerable<PatientRegisterFrom.Models.Register>
+
+@{
+    ViewData["Title"] = "Home Page";
+}
+
+<div class="row">
+    <div class="col">
+        <h2>Patient List</h2>
+        <table class="table table-bordered">
+            <thead class="thead-dark">
+                <tr>
+                    <th>@Html.DisplayNameFor(x => x.id)</th>
+                    <th>@Html.DisplayNameFor(x => x.visitDate)</th>
+                    <th>@Html.DisplayNameFor(x => x.firstName)</th>
+                    <th>@Html.DisplayNameFor(x => x.surName)</th>
+                    <th>@Html.DisplayNameFor(x => x.bloodGroup)</th>
+                    <th>@Html.DisplayNameFor(x => x.bodyWeight)</th>
+                    <th>@Html.DisplayNameFor(x => x.age)</th>
+                    <th>@Html.DisplayNameFor(x => x.homeAddress)</th>
+                    <th>@Html.DisplayNameFor(x => x.sex)</th>
+                    <th>@Html.DisplayNameFor(x => x.workAddress)</th>
+                    <th>@Html.DisplayNameFor(x => x.maritalStatus)</th>
+                    <th>@Html.DisplayNameFor(x => x.kinName)</th>
+                    <th>@Html.DisplayNameFor(x => x.kinPhoneNo)</th>
+                    <th>@Html.DisplayNameFor(x => x.kinAddress)</th>
+                    <th>@Html.DisplayNameFor(x => x.disability)</th>
+                    <th></th>
+                </tr>
+            </thead>
+            <tbody>
+                @foreach (var v in Model)
+                {
+                <tr>
+                    <td>@Html.DisplayFor(x => v.id)</td>
+                    <td>@Html.DisplayFor(x => v.visitDate)</td>
+                    <td>@Html.DisplayFor(x => v.firstName)</td>
+                    <td>@Html.DisplayFor(x => v.surName)</td>
+                    <td>@Html.DisplayFor(x => v.bloodGroup)</td>
+                    <td>@Html.DisplayFor(x => v.bodyWeight)</td>
+                    <td>@Html.DisplayFor(x => v.age)</td>
+                    <td>@Html.DisplayFor(x => v.homeAddress)</td>
+                    <td>@Html.DisplayFor(x => v.sex)</td>
+                    <td>@Html.DisplayFor(x => v.workAddress)</td>
+                    <td>@Html.DisplayFor(x => v.maritalStatus)</td>
+                    <td>@Html.DisplayFor(x => v.kinName)</td>
+                    <td>@Html.DisplayFor(x => v.kinPhoneNo)</td>
+                    <td>@Html.DisplayFor(x => v.kinAddress)</td>
+                    <td>@Html.DisplayFor(x => v.disability)</td>
+                    <td>
+                        <a asp-action="Delete" asp-route-id="@v.id">Delete</a>
+                    </td>
+                    
+                </tr>
+                }
+            </tbody>
+        </table>
+    </div>
+</div>
